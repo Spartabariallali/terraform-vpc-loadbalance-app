@@ -19,14 +19,18 @@ cat ~/.ssh/id_rsa.pub | ssh user@123.45.56.78 "mkdir -p ~/.ssh && cat >>  ~/.ssh
 - `terraform plan -target=module.vpc`
 - `terraform apply -target=module.vpc`
 
+![vpc](imagesmd/vpc.jpeg)
+
 
 #### 3. Launch the Target Groups
 
 - `terraform plan -target=module.alb-target-group`
 - `terraform apply -target=module.alb-target-group`
 
+![target-group](imagesmd/tg.jpeg)
 
-#### 4. Launching Loadbalancer
+
+#### 4. Launching Loadbalancer *** THIS STAGE CAN BE DONE LAST ***
 
 - Make sure you copy the `ARN` once the target-groups are created and the copy this into the following file
 
@@ -57,6 +61,11 @@ cat ~/.ssh/id_rsa.pub | ssh user@123.45.56.78 "mkdir -p ~/.ssh && cat >>  ~/.ssh
 
 *** Ensure you have placed your private key generated earlier as they will be used to ssh into the instances created ***
 
+- `terraform plan -target=module.ec2-app-v1`
+- `terraform apply -target=module.ec2-app-v1`
+
+![ec2](imagesmd/ec2.jpeg)
+
 
 #### 7. Provisioning EC2s
 
@@ -66,3 +75,15 @@ cat ~/.ssh/id_rsa.pub | ssh user@123.45.56.78 "mkdir -p ~/.ssh && cat >>  ~/.ssh
 
 - `terraform plan -target null_resource.remote-exec`
 - `terraform apply -target null_resource.remote-exec`
+
+![ssh](imagesmd/ssh-connection.jpeg)
+
+
+#### Destroying Resources 
+
+`terraform destroy -target module.app-alb
+terraform destroy -target=module.ec2-app-v1
+terraform destroy -target=module.bari-ec2-sg
+terraform destroy -target=module.alb-target
+terraform destroy -target=module.vpc
+`
