@@ -79,11 +79,13 @@ cat ~/.ssh/id_rsa.pub | ssh user@123.45.56.78 "mkdir -p ~/.ssh && cat >>  ~/.ssh
 ![ssh](imagesmd/ssh-connection.jpeg)
 
 
-#### Destroying Resources 
+#### Destroying Resources
 
-`terraform destroy -target module.app-alb
+```
+terraform destroy -target module.app-alb
 terraform destroy -target=module.ec2-app-v1
 terraform destroy -target=module.bari-ec2-sg
 terraform destroy -target=module.alb-target
 terraform destroy -target=module.vpc
-`
+
+```
