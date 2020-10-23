@@ -7,10 +7,10 @@ module "ec2-app-v1" {
   number-of-ec2-instances-required = "1"
   public-key-file-name = "${file("./modules/ec2/bari-terraform-v2.pub")}"
 
-  instance-name-taq = "cloudgeeks-vpn"
+  instance-name-taq = "bari-vpn"
   associate-public-ip-address = "true"
 
-  vpc-security-group-ids = "${module.cloudgeeks-ec2-sg.ec2-sg-security-group}"
+  vpc-security-group-ids = "${module.bari-ec2-sg.ec2-sg-security-group}"
   # ec2-subnets-ids = ["${module.vpc.public-subnet-ids}"]
 
   #IN CASE OF LAUNCHING EC2 IN SPECIFIC SUBNETS OR PRIVATE SUBNETS, PLEASE UN-COMMENT BELOW"

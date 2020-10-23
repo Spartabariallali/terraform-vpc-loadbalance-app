@@ -1,4 +1,4 @@
-module "cloudgeeks-ec2-sg" {
+module "bari-ec2-sg" {
   source = "./modules/ec2-sg"
   region = "eu-west-1"
   vpc-id = "${module.vpc.vpc-id}"
