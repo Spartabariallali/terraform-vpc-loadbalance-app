@@ -13,7 +13,7 @@ resource "null_resource" "remote-exec" {
       type     = "ssh"
       user     = "ubuntu"
       private_key = "${file("./bari-terraform-v2.pub")}"
-      host     = "54.154.31.81"
+      host     = "34.253.87.240"
       timeout = "2m"
     }
   }
@@ -27,7 +27,7 @@ resource "null_resource" "remote-exec" {
       type     = "ssh"
       user     = "ubuntu"
       private_key = "${file("./modules/remote-exec-provisioners/bari-terraform-v2.pub")}"
-      host     = "54.154.31.81"
+      host     = "34.253.87.240"
       timeout = "2m"
     }
   }

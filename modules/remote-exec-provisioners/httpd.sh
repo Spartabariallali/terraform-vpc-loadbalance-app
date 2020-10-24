@@ -1,21 +1,13 @@
 
-#!/bin/bash
-
-sudo apt-get update
-sudo apt-get install -y yum
-
-yum install -y httpd
-service httpd start
-chkconfig httpd on
-echo "<h1>Hello world - Bari Allali</h1>" > /var/www/html/index.html
+ #!/bin/bash
+ 
+sudo apt update -y
+sudo apt install apache2 -y
+sudo systemctl start apache2
+sudo bash -c echo 'Bari Allali - Terraform' > /var/www/html/index.html
 
 
 
-
-
-
-
-#END
 
 
 

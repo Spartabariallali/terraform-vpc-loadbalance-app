@@ -1,8 +1,9 @@
-#!/bin/bash
+ #!/bin/bash
+ 
+sudo apt update -y
+sudo apt install apache2 -y
+sudo systemctl start apache2
+sudo bash -c 'Bari Allali - Terraform > /var/www/html/index.html'
 
-yum install -y httpd
-service httpd start
-chkconfig httpd on
-echo "<h1>Alhumdulliah Terraform By Muhammad Asim</h1>" > /var/www/html/index.html
 
-#END
+EOF
